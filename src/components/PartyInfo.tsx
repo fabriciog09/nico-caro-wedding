@@ -22,7 +22,7 @@ export default function PartyInfo() {
   }
 
   return (
-    <section className="party-info section">
+    <section id="musica" className="party-info section">
       <div className="container">
         <motion.h2
           className="section-title"

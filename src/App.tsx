@@ -7,12 +7,15 @@ import PartyInfo from './components/PartyInfo'
 import Gifts from './components/Gifts'
 import SharePhotos from './components/SharePhotos'
 import Footer from './components/Footer'
+import MusicPlayer from './components/MusicPlayer'
 import './App.css'
 
 function App() {
   const [showWelcome, setShowWelcome] = useState(true)
+  const [playMusic, setPlayMusic] = useState(false)
 
-  const handleEnter = () => {
+  const handleEnter = (withMusic: boolean) => {
+    setPlayMusic(withMusic)
     setShowWelcome(false)
   }
 
@@ -22,6 +25,7 @@ function App() {
 
   return (
     <div className="app">
+      <MusicPlayer isPlaying={playMusic} />
       <Hero />
       <EventDetails />
       <Gallery />

@@ -3,7 +3,7 @@ import { HiMusicalNote, HiSpeakerXMark } from 'react-icons/hi2'
 import './Welcome.css'
 
 interface WelcomeProps {
-  onEnter: () => void
+  onEnter: (withMusic: boolean) => void
 }
 
 export default function Welcome({ onEnter }: WelcomeProps) {
@@ -48,7 +48,7 @@ export default function Welcome({ onEnter }: WelcomeProps) {
         >
           <button
             className="btn btn-welcome"
-            onClick={onEnter}
+            onClick={() => onEnter(true)}
           >
             <HiMusicalNote />
             <span>Ingresar con música</span>
@@ -56,7 +56,7 @@ export default function Welcome({ onEnter }: WelcomeProps) {
           
           <button
             className="btn btn-welcome-alt"
-            onClick={onEnter}
+            onClick={() => onEnter(false)}
           >
             <HiSpeakerXMark />
             <span>Ingresar sin música</span>

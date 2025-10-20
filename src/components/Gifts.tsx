@@ -47,21 +47,6 @@ export default function Gifts() {
                 <p><strong>CBU/CVU:</strong> 0170123456789012345678</p>
               </div>
             </div>
-
-            <div className="gift-option">
-              <h3>💝 Lista de Regalos</h3>
-              <p>También tenemos una lista de regalos en:</p>
-              <a 
-                href="https://www.falabella.com.uy" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn btn-secondary"
-                style={{ marginTop: '1rem' }}
-              >
-                Ver lista en Falabella
-              </a>
-            </div>
-
             <p style={{ marginTop: '2rem', fontStyle: 'italic', textAlign: 'center', fontSize: '0.95rem' }}>
               ¡Muchas gracias por tu generosidad!
             </p>

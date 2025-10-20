@@ -16,9 +16,9 @@ export default function EventDetails() {
   const addToCalendar = () => {
     const event = {
       title: 'Boda de Nico y Caro',
-      start: '2025-05-15T17:00:00',
-      end: '2025-05-16T01:00:00',
-      location: 'Salon de fiestas Avril, Av. Los Reartes 12 - Montevideo'
+      start: '2026-01-17T17:00:00',
+      end: '2026-01-18T07:00:00',
+      location: 'La Chacra Policial Rivera, Rivera, Uruguay'
     }
 
     // Formato Google Calendar
@@ -27,7 +27,7 @@ export default function EventDetails() {
   }
 
   return (
-    <section className="event-details section">
+    <section id="ceremonia" className="event-details section">
       <div className="container">
         <motion.div
           className="event-card-single"
@@ -44,17 +44,17 @@ export default function EventDetails() {
           <div className="event-info">
             <div className="info-item">
               <h4>Día</h4>
-              <p>Sábado, 15 de Mayo - 17h à 1h</p>
+              <p>Sábado, 17 de Enero - 17h à 1h</p>
             </div>
             
             <div className="info-item">
               <h4>Lugar</h4>
-              <p>Salon de fiestas Avril</p>
+              <p>La Chacra Policial Rivera</p>
             </div>
             
             <div className="info-item">
               <h4>Dirección</h4>
-              <p>Av. Los Reartes 12 - Montevideo</p>
+              <p>Rivera, Uruguay</p>
             </div>
           </div>
 
@@ -75,7 +75,7 @@ export default function EventDetails() {
             </button>
             
             <a
-              href="https://maps.google.com/?q=Av.+Los+Reartes+12+Montevideo"
+              href="https://www.google.com/maps/place/Chacra+Policial+Rivera/@-30.9391022,-55.4942279,17z/data=!3m1!4b1!4m6!3m5!1s0x95a9fd882b01f091:0x9dcda1ec96fa86d4!8m2!3d-30.9391022!4d-55.491653!16s%2Fg%2F11c5h2cz6x"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"

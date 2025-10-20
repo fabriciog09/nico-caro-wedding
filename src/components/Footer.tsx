@@ -17,11 +17,7 @@ export default function Footer() {
           <div className="footer-links">
             <a href="#ceremonia" className="footer-link">
               <HiCalendar />
-              <span>Confirmar asistencia a ceremonia</span>
-            </a>
-            <a href="#celebracion" className="footer-link">
-              <HiCalendar />
-              <span>Confirmar asistencia a celebración</span>
+              <span>Confirmar asistencia</span>
             </a>
             <a href="#musica" className="footer-link">
               <HiMusicalNote />
@@ -33,7 +29,7 @@ export default function Footer() {
 
           <div className="footer-bottom">
             <p className="footer-date">
-              <HiMapPin /> Montevideo, Uruguay • 15 de Mayo 2025
+              <HiMapPin /> Rivera, Uruguay • 17 de Enero 2026
             </p>
             <button onClick={scrollToTop} className="back-to-top">
               ↑
@@ -41,7 +37,7 @@ export default function Footer() {
           </div>
 
           <p className="footer-credit">
-            Desarrollado con <HiHeart className="heart" /> por los novios
+            Desarrollado con <HiHeart className="heart" />
           </p>
         </div>
       </div>

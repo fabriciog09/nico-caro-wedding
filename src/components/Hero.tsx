@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import "./Hero.css";
 
@@ -10,14 +10,17 @@ interface TimeLeft {
 }
 
 export default function Hero() {
-  const targetDate = "2025-05-15T17:00:00";
+  const targetDate = "2026-01-17T17:00:00";
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
   });
+  const [offsetY, setOffsetY] = useState(0);
+  const parallaxRef = useRef<HTMLDivElement>(null);
 
+  // Contador regresivo
   useEffect(() => {
     const calculateTimeLeft = () => {
       const difference = +new Date(targetDate) - +new Date();
@@ -38,9 +41,25 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, [targetDate]);
 
+  // Efecto Parallax
+  useEffect(() => {
+    const handleScroll = () => {
+      setOffsetY(window.pageYOffset);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="hero">
-      <div className="hero-background">
+    <section className="hero" ref={parallaxRef}>
+      <div 
+        className="hero-background"
+        style={{
+          transform: `translateY(${offsetY * 0.5}px)`
+        }}
+      >
         <div className="hero-overlay"></div>
       </div>
 
@@ -51,7 +70,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          15.05.2025
+          17.01.2026
         </motion.div>
 
         <motion.div
@@ -71,7 +90,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="countdown-label">Faltan</p>
+          <p className="countdown-label">Falta</p>
           <div className="countdown-grid">
             <div className="countdown-item">
               <div className="countdown-value">
