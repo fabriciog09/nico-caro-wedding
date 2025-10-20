@@ -18,7 +18,7 @@
   z-index: 0;
   will-change: transform;
   background-image: 
-    url('https://fixdate.io/modelo-invitacion/30/img/instagram.webp');
+    url('/src/assets/share-bg.webp');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
