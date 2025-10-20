@@ -1,0 +1,78 @@
+.gifts {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.gifts-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gifts-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.gifts h2 {
+  color: var(--color-white);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.gifts p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.gifts .btn {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-white);
+}
+
+.gifts .btn:hover {
+  background: transparent;
+  color: var(--color-white);
+}
+
+.gifts-modal-content {
+  color: var(--color-dark);
+}
+
+.gift-option {
+  background: var(--color-light);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.gift-option h3 {
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.bank-details {
+  text-align: left;
+  background: var(--color-white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--color-secondary);
+}
+
+.bank-details p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.bank-details strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+

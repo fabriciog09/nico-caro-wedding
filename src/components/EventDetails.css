@@ -1,0 +1,122 @@
+.event-details {
+  background: var(--color-white);
+  padding: 4rem 0;
+}
+
+.event-card-single {
+  background: var(--color-light);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.event-card-single:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.event-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.event-title {
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.event-info {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-item h4 {
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+.info-item p {
+  color: var(--color-dark);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.event-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.event-actions .btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.5rem;
+}
+
+.modal-title {
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.modal-text {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--color-dark);
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .event-card-single {
+    padding: 2rem 1.5rem;
+  }
+}
