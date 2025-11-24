@@ -39,14 +39,14 @@ Hardware acceleration para mejor performance
   
   /* 1. COMENTA el gradiente actual (líneas 21-23): */
   /*
-  background: linear-gradient(135deg, #8B7355 0%, #C9A76B 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #4C7CC9 0%, #A6CFF5 50%, #7FB4E8 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   */
   
   /* 2. DESCOMENTA esto (líneas 26-36): */
   background-image: 
-    linear-gradient(135deg, rgba(139, 115, 85, 0.6) 0%, rgba(201, 167, 107, 0.6) 100%),
+    linear-gradient(135deg, rgba(76, 124, 201, 0.6) 0%, rgba(166, 207, 245, 0.6) 100%),
     url('/images/hero-background.jpg');
   background-size: cover;
   background-position: center;
@@ -101,7 +101,7 @@ Si la imagen está muy clara y el texto no se lee bien:
 - `rgba(0, 0, 0, 0.2)` - Overlay suave
 - `rgba(0, 0, 0, 0.4)` - Overlay medio
 - `rgba(0, 0, 0, 0.6)` - Overlay fuerte
-- `rgba(139, 115, 85, 0.4)` - Overlay con tinte dorado
+- `rgba(76, 124, 201, 0.35)` - Overlay con tinte azul pastel
 
 ## 🎭 Cómo Funciona el Parallax
 
@@ -175,14 +175,14 @@ Edita `src/components/Hero.css`:
   
   /* Comenta esto */
   /*
-  background: linear-gradient(135deg, #8B7355 0%, #C9A76B 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #4C7CC9 0%, #A6CFF5 50%, #7FB4E8 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   */
   
   /* Activa esto */
   background-image: 
-    linear-gradient(135deg, rgba(139, 115, 85, 0.6) 0%, rgba(201, 167, 107, 0.6) 100%),
+    linear-gradient(135deg, rgba(76, 124, 201, 0.6) 0%, rgba(166, 207, 245, 0.6) 100%),
     url('/images/hero-background.jpg');
   background-size: cover;
   background-position: center;

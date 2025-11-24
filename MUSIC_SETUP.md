@@ -88,7 +88,7 @@ Edita `src/components/MusicPlayer.css`:
 ```css
 .music-toggle {
   /* Gradiente del botón */
-  background: linear-gradient(135deg, #8B7355 0%, #C9A76B 100%);
+  background: linear-gradient(135deg, #4C7CC9 0%, #A6CFF5 100%);
   
   /* Color del borde */
   border: 3px solid #FFFFFF;

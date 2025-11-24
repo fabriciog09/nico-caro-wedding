@@ -14,7 +14,7 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
 
   // URL del video de YouTube (puedes cambiar esto)
   // Formato: https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID&controls=0
-  const musicUrl = 'https://www.youtube.com/embed/_-sfvr5Sk6A?autoplay=1&loop=1&playlist=_-sfvr5Sk6A&controls=0&showinfo=0&rel=0&modestbranding=1'
+  const musicUrl = 'https://www.youtube.com/embed/XMPgVZtADtQ?autoplay=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1'
 
   useEffect(() => {
     setIsPlaying(initialIsPlaying)

@@ -29,62 +29,105 @@ export default function EventDetails() {
   return (
     <section id="ceremonia" className="event-details section">
       <div className="container">
-        <motion.div
-          className="event-card-single"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="event-icon">
-            <HiCalendar />
-          </div>
-          <h3 className="event-title">Ceremonia y fiesta</h3>
-          
-          <div className="event-info">
-            <div className="info-item">
-              <h4>Día</h4>
-              <p>Sábado, 17 de Enero - 17h à 1h</p>
+        <div className="event-cards-grid">
+          <motion.div
+            className="event-card-single"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="event-icon">
+              <HiCalendar />
             </div>
+            <h3 className="event-title">Ceremonia Civil</h3>
             
-            <div className="info-item">
-              <h4>Lugar</h4>
-              <p>La Chacra Policial Rivera</p>
+            <div className="event-info">
+              <div className="info-item">
+                <h4>Día</h4>
+                <p>Jueves, 15 de Enero - 14:00hs</p>
+              </div>
+              
+              <div className="info-item">
+                <h4>Dirección</h4>
+                <p>18 de Julio esq. Fructuoso Rivera N° 578</p>
+              </div>
+              
+              <div className="info-item">
+                <h4>Ciudad</h4>
+                <p>Tranqueras - Rivera</p>
+              </div>
             </div>
-            
-            <div className="info-item">
-              <h4>Dirección</h4>
-              <p>Rivera, Uruguay</p>
+            <div className="event-actions">
+              <a
+                href="https://www.google.com/maps/place/18+de+Julio+%26+General+Fructuoso+Rivera,+40100+Tranqueras,+Departamento+de+Rivera/@-31.189997,-55.7681723,19z/data=!4m6!3m5!1s0x95a9ebd1c081f2d9:0xf75a971a5c1ec011!8m2!3d-31.1898778!4d-55.7672952!16s%2Fg%2F11h9x1y_hz?entry=tts&g_ep=EgoyMDI1MTExNy4wIPu8ASoASAFQAw%3D%3D&skid=b220a9db-c34c-459a-a19e-0d77898c1266"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                <HiMapPin />
+                ¿Cómo llegar?
+              </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="event-actions">
-            <button
-              className="btn btn-primary"
-              onClick={() => setShowConfirmModal(true)}
-            >
-              <HiCheckCircle />
-              Confirmar asistencia
-            </button>
+          <motion.div
+            className="event-card-single"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="event-icon">
+              <HiCalendar />
+            </div>
+            <h3 className="event-title">Ceremonia y fiesta</h3>
             
-            <button
-              className="btn btn-secondary"
-              onClick={addToCalendar}
-            >
-              Agendar
-            </button>
-            
-            <a
-              href="https://www.google.com/maps/place/Chacra+Policial+Rivera/@-30.9391022,-55.4942279,17z/data=!3m1!4b1!4m6!3m5!1s0x95a9fd882b01f091:0x9dcda1ec96fa86d4!8m2!3d-30.9391022!4d-55.491653!16s%2Fg%2F11c5h2cz6x"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary"
-            >
-              <HiMapPin />
-              ¿Cómo llegar?
-            </a>
-          </div>
-        </motion.div>
+            <div className="event-info">
+              <div className="info-item">
+                <h4>Día</h4>
+                <p>Sábado, 17 de Enero - 18:30hs</p>
+              </div>
+              
+              <div className="info-item">
+                <h4>Lugar</h4>
+                <p>La Chacra Policial Rivera</p>
+              </div>
+              
+              <div className="info-item">
+                <h4>Dirección</h4>
+                <p>Rivera, Uruguay</p>
+              </div>
+            </div>
+
+            <div className="event-actions">
+              <button
+                className="btn btn-primary"
+                onClick={() => setShowConfirmModal(true)}
+              >
+                <HiCheckCircle />
+                Confirmar asistencia
+              </button>
+              
+              <button
+                className="btn btn-secondary"
+                onClick={addToCalendar}
+              >
+                Agendar
+              </button>
+              
+              <a
+                href="https://www.google.com/maps/place/Chacra+Policial+Rivera/@-30.9391022,-55.4942279,17z/data=!3m1!4b1!4m6!3m5!1s0x95a9fd882b01f091:0x9dcda1ec96fa86d4!8m2!3d-30.9391022!4d-55.491653!16s%2Fg%2F11c5h2cz6x"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                <HiMapPin />
+                ¿Cómo llegar?
+              </a>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {showConfirmModal && (

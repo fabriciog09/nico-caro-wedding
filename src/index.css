@@ -7,12 +7,13 @@
 }
 
 :root {
-  /* Colores principales */
-  --color-primary: #8B7355;
-  --color-secondary: #D4AF37;
-  --color-accent: #C9A76B;
-  --color-dark: #2C2416;
-  --color-light: #F8F6F3;
+  /* Colores principales (Fixdate Sky) */
+  --color-primary: #002E5A;   /* Azul petróleo */
+  --color-secondary: #AEDCEB; /* Turquesa pastel */
+  --color-accent: #E1F2F9;    /* Azul nieve */
+  --color-dark: #001C3A;      /* Azul noche */
+  --color-light: #E3E6E5;     /* Fondo claro neutro */
+  --color-muted: #818B94;     /* Gris azulado */
   --color-white: #FFFFFF;
   
   /* Tipografía */
@@ -30,8 +31,8 @@
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-light);
-  color: var(--color-dark);
+  background-color: var(--color-accent);
+  color: var(--color-muted);
   line-height: 1.6;
   overflow-x: hidden;
 }

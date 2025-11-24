@@ -3,6 +3,14 @@
   padding: 4rem 0;
 }
 
+.event-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .event-card-single {
   background: var(--color-light);
   border-radius: 20px;
@@ -13,8 +21,6 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .event-card-single:hover {
@@ -116,6 +122,11 @@
 }
 
 @media (max-width: 768px) {
+  .event-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .event-card-single {
     padding: 2rem 1.5rem;
   }

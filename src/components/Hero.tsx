@@ -54,76 +54,189 @@ export default function Hero() {
 
   return (
     <section className="hero" ref={parallaxRef}>
-      <div 
-        className="hero-background"
-        style={{
-          transform: `translateY(${offsetY * 0.5}px)`
-        }}
-      >
-        <div className="hero-overlay"></div>
-      </div>
-
-      <div className="hero-content">
-        <motion.div
-          className="hero-date"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+      <div className="hero-layout">
+        <div
+          className="hero-visual"
+          style={{
+            transform: `translateY(${offsetY * 0.2}px)`,
+          }}
         >
-          17.01.2026
-        </motion.div>
+          <div className="hero-visual-overlay" />
+        </div>
 
-        <motion.div
-          className="hero-names"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <h1 className="name">Nico</h1>
-          <span className="ampersand">&</span>
-          <h1 className="name">Caro</h1>
-        </motion.div>
+        <div className="hero-panel">
+          <div className="hero-floral-layer">
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_A.webp"
+              />
+              <source
+                type="image/png"
+                srcSet="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_A.png"
+              />
+              <img
+                className="hero-flower hero-flower-1"
+                src="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_A.png"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
 
-        <motion.div
-          className="hero-countdown"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <p className="countdown-label">Falta</p>
-          <div className="countdown-grid">
-            <div className="countdown-item">
-              <div className="countdown-value">
-                {String(timeLeft.days).padStart(2, "0")}
-              </div>
-              <div className="countdown-unit">días</div>
-            </div>
-            <div className="countdown-item">
-              <div className="countdown-value">
-                {String(timeLeft.hours).padStart(2, "0")}
-              </div>
-              <div className="countdown-unit">hs</div>
-            </div>
-            <div className="countdown-item">
-              <div className="countdown-value">
-                {String(timeLeft.minutes).padStart(2, "0")}
-              </div>
-              <div className="countdown-unit">min</div>
-            </div>
-            <div className="countdown-item">
-              <div className="countdown-value">
-                {String(timeLeft.seconds).padStart(2, "0")}
-              </div>
-              <div className="countdown-unit">seg</div>
-            </div>
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_B.webp"
+              />
+              <source
+                type="image/png"
+                srcSet="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_B.png"
+              />
+              <img
+                className="hero-flower hero-flower-2"
+                src="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_B.png"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_C.webp"
+              />
+              <source
+                type="image/png"
+                srcSet="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_C.png"
+              />
+              <img
+                className="hero-flower hero-flower-3"
+                src="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_C.png"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_D.webp"
+              />
+              <source
+                type="image/png"
+                srcSet="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_D.png"
+              />
+              <img
+                className="hero-flower hero-flower-4"
+                src="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_D.png"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
+
+            <picture>
+              <source
+                type="image/webp"
+                srcSet="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_E.webp"
+              />
+              <source
+                type="image/png"
+                srcSet="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_E.png"
+              />
+              <img
+                className="hero-flower hero-flower-5"
+                src="https://fixdate.io/modelo-invitacion/57/img/flores_Grupo01_E.png"
+                alt=""
+                loading="lazy"
+              />
+            </picture>
           </div>
-        </motion.div>
+
+          <motion.div
+            className="hero-card"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+          >
+            <motion.span
+              className="hero-date-pill"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              17 · 01 · 2026
+            </motion.span>
+
+            <motion.div
+              className="hero-names"
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <h1 className="name">Nico</h1>
+              <span className="ampersand">&</span>
+              <h1 className="name">Caro</h1>
+            </motion.div>
+
+            <motion.div
+              className="hero-quote"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+            >
+              <p>
+
+              <span className="quote-mark">“</span>
+                We are all mortal until the first kiss and the second glass of
+                wine.
+                <span className="quote-mark">”</span>
+              </p>
+             
+            </motion.div>
+
+            <motion.div
+              className="hero-countdown"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <p className="countdown-label">Falta</p>
+              <div className="countdown-grid">
+                <div className="countdown-item">
+                  <div className="countdown-value">
+                    {String(timeLeft.days).padStart(2, "0")}
+                  </div>
+                  <div className="countdown-unit">días</div>
+                </div>
+                <div className="countdown-item">
+                  <div className="countdown-value">
+                    {String(timeLeft.hours).padStart(2, "0")}
+                  </div>
+                  <div className="countdown-unit">hs</div>
+                </div>
+                <div className="countdown-item">
+                  <div className="countdown-value">
+                    {String(timeLeft.minutes).padStart(2, "0")}
+                  </div>
+                  <div className="countdown-unit">min</div>
+                </div>
+                <div className="countdown-item">
+                  <div className="countdown-value">
+                    {String(timeLeft.seconds).padStart(2, "0")}
+                  </div>
+                  <div className="countdown-unit">seg</div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
+
       <motion.div
         className="hero-scroll"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.2 }}
+        transition={{ duration: 0.8, delay: 1 }}
       >
         <div className="scroll-indicator">
           <span></span>

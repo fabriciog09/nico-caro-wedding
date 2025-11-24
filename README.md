@@ -99,9 +99,12 @@ Edita las variables CSS en `src/index.css`:
 
 ```css
 :root {
-  --color-primary: #8B7355;
-  --color-secondary: #D4AF37;
-  --color-accent: #C9A76B;
+  --color-primary: #002E5A;
+  --color-secondary: #AEDCEB;
+  --color-accent: #E1F2F9;
+  --color-dark: #001C3A;
+  --color-light: #E3E6E5;
+  --color-muted: #818B94;
   /* ... más colores */
 }
 ```

@@ -2,14 +2,13 @@ import { motion } from 'framer-motion'
 import './Gallery.css'
 
 export default function Gallery() {
-  // Placeholder images - en producción estas serían las fotos reales de la pareja
   const photos = [
-    { id: 1, url: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=800&fit=crop' },
-    { id: 2, url: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&h=800&fit=crop' },
-    { id: 3, url: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=800&fit=crop' },
-    { id: 4, url: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&h=800&fit=crop' },
-    { id: 5, url: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=600&h=800&fit=crop' },
-    { id: 6, url: 'https://images.unsplash.com/photo-1530047625168-4b29bfbbe1fc?w=600&h=800&fit=crop' }
+    { id: 1, url: '/images/nosotors-1.jpeg' },
+    { id: 2, url: '/images/nosotros-2.jpeg' },
+    { id: 3, url: '/images/nosotros-3.jpeg' },
+    { id: 4, url: '/images/nosotros-4.jpeg' },
+    { id: 5, url: '/images/nosotros-5.jpeg' },
+    { id: 6, url: '/images/nosotros-6.jpeg' }
   ]
 
   return (

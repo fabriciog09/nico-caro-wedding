@@ -36,7 +36,7 @@ Edita `src/components/Hero.css` (líneas 10-41) y elige una de estas opciones:
 
 ```css
 .hero-background {
-  background: linear-gradient(135deg, #8B7355 0%, #C9A76B 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #002E5A 0%, #AEDCEB 50%, #E1F2F9 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
 }
@@ -57,13 +57,13 @@ Edita `src/components/Hero.css` (líneas 10-41) y elige una de estas opciones:
 ```css
 .hero-background {
   /* Comenta esto: */
-  /* background: linear-gradient(135deg, #8B7355 0%, #C9A76B 50%, #D4AF37 100%);
+  /* background: linear-gradient(135deg, #002E5A 0%, #AEDCEB 50%, #E1F2F9 100%);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite; */
   
   /* Descomenta esto: */
   background-image: 
-    linear-gradient(135deg, rgba(139, 115, 85, 0.7) 0%, rgba(201, 167, 107, 0.7) 50%, rgba(212, 175, 55, 0.7) 100%),
+    linear-gradient(135deg, rgba(0, 46, 90, 0.75) 0%, rgba(174, 220, 235, 0.75) 50%, rgba(225, 242, 249, 0.75) 100%),
     url('/images/hero-background.jpg');
   background-size: cover;
   background-position: center;
@@ -122,7 +122,7 @@ En `Hero.css` línea 62, descomenta:
 ```css
 .hero-background {
   background-image: 
-    linear-gradient(135deg, rgba(139, 115, 85, 0.6) 0%, rgba(201, 167, 107, 0.6) 100%),
+    linear-gradient(135deg, rgba(0, 46, 90, 0.65) 0%, rgba(174, 220, 235, 0.65) 100%),
     url('/images/couple-photo.jpg');
   background-size: cover;
   background-position: center top;  /* Enfoca la parte superior */
@@ -143,7 +143,7 @@ En `Hero.css` línea 62, descomenta:
 }
 
 .hero-overlay {
-  background: rgba(139, 115, 85, 0.4);  /* Tinte marrón suave */
+  background: rgba(0, 46, 90, 0.35);  /* Tinte azul suave */
 }
 ```
 
@@ -152,7 +152,7 @@ En `Hero.css` línea 62, descomenta:
 ```css
 .hero-background {
   background-image: 
-    linear-gradient(135deg, rgba(139, 115, 85, 0.85) 0%, rgba(212, 175, 55, 0.85) 100%),
+    linear-gradient(135deg, rgba(0, 46, 90, 0.85) 0%, rgba(174, 220, 235, 0.85) 100%),
     url('/images/elegant-texture.jpg');
   background-size: cover;
   background-position: center;
@@ -277,7 +277,7 @@ Si no te gusta el resultado, simplemente:
 .hero-background {
   /* Comenta líneas 18-20 */
   background-image: 
-    linear-gradient(135deg, rgba(139, 115, 85, 0.7) 0%, rgba(201, 167, 107, 0.7) 100%),
+    linear-gradient(135deg, rgba(0, 46, 90, 0.7) 0%, rgba(174, 220, 235, 0.7) 100%),
     url('/images/hero-background.jpg');
   background-size: cover;
   background-position: center;

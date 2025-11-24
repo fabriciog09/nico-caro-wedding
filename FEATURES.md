@@ -92,11 +92,12 @@
 ## 🎨 Diseño y Estilo
 
 ### Paleta de Colores
-- **Primary**: #8B7355 (Marrón cálido)
-- **Secondary**: #D4AF37 (Dorado)
-- **Accent**: #C9A76B (Beige dorado)
-- **Dark**: #2C2416 (Marrón oscuro)
-- **Light**: #F8F6F3 (Beige claro)
+- **Primary**: #002E5A (Azul petróleo)
+- **Secondary**: #AEDCEB (Turquesa pastel)
+- **Accent**: #E1F2F9 (Cielo suave)
+- **Dark**: #001C3A (Azul noche)
+- **Light**: #E3E6E5 (Gris perla)
+- **Muted**: #818B94 (Gris azulado para texto)
 
 ### Tipografía
 - **Headings**: Cormorant Garamond (serif elegante)
