@@ -39,12 +39,10 @@ export default function Gifts() {
             </p>
 
             <div className="gift-option">
-              <h3>🏦 Transferencia Bancaria</h3>
+              <h3>🏦 Colectivo Abitab </h3>
               <div className="bank-details">
-                <p><strong>Banco:</strong> Banco República (BROU)</p>
-                <p><strong>Titular:</strong> Nicolás García</p>
-                <p><strong>Cuenta:</strong> 1234567890</p>
-                <p><strong>CBU/CVU:</strong> 0170123456789012345678</p>
+                <p><strong>Nombre:</strong> Boda Carolina Techera y Nicolas Camargo</p>
+                <p><strong>Numero:</strong> 145597</p>
               </div>
             </div>
             <p style={{ marginTop: '2rem', fontStyle: 'italic', textAlign: 'center', fontSize: '0.95rem' }}>
