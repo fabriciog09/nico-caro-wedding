@@ -7,14 +7,23 @@ interface MusicPlayerProps {
   isPlaying: boolean
 }
 
+const YOUTUBE_VIDEO_ID = 'XMPgVZtADtQ'
+
 export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(initialIsPlaying)
   const [isLoaded, setIsLoaded] = useState(false)
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
-  // URL del video de YouTube (puedes cambiar esto)
+  // URL del video de YouTube (con parámetros para autoplay/loop y control vía API)
   // Formato: https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID&controls=0
-  const musicUrl = 'https://www.youtube.com/embed/XMPgVZtADtQ?autoplay=1&loop=1&controls=0&showinfo=0&rel=0&modestbranding=1'
+  const musicUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&mute=1`
+
+  const sendPlayerCommand = (func: string) => {
+    iframeRef.current?.contentWindow?.postMessage(
+      JSON.stringify({ event: 'command', func, args: '' }),
+      '*'
+    )
+  }
 
   useEffect(() => {
     setIsPlaying(initialIsPlaying)
@@ -23,17 +32,10 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
   const toggleMusic = () => {
     if (iframeRef.current) {
       if (isPlaying) {
-        // Pausar: enviar mensaje al iframe de YouTube
-        iframeRef.current.contentWindow?.postMessage(
-          '{"event":"command","func":"pauseVideo","args":""}',
-          '*'
-        )
+        sendPlayerCommand('pauseVideo')
       } else {
-        // Reproducir: enviar mensaje al iframe de YouTube
-        iframeRef.current.contentWindow?.postMessage(
-          '{"event":"command","func":"playVideo","args":""}',
-          '*'
-        )
+        sendPlayerCommand('unMute')
+        sendPlayerCommand('playVideo')
       }
     }
     setIsPlaying(!isPlaying)
@@ -41,6 +43,10 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
 
   const handleLoad = () => {
     setIsLoaded(true)
+    if (isPlaying) {
+      sendPlayerCommand('unMute')
+      sendPlayerCommand('playVideo')
+    }
   }
 
   if (!initialIsPlaying && !isPlaying) {
@@ -53,7 +59,7 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
       <iframe
         ref={iframeRef}
         src={isPlaying ? musicUrl : ''}
-        allow="autoplay; encrypted-media"
+        allow="autoplay; encrypted-media; picture-in-picture"
         style={{ display: 'none' }}
         onLoad={handleLoad}
         title="Background Music"
