@@ -16,11 +16,15 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
 
   // URL del video de YouTube (con parámetros para autoplay/loop y control vía API)
   // Formato: https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID&controls=0
-  const musicUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&mute=1`
+  const originParam =
+    typeof window !== 'undefined' ? encodeURIComponent(window.location.origin) : ''
+  const musicUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&mute=1${
+    originParam ? `&origin=${originParam}` : ''
+  }`
 
-  const sendPlayerCommand = (func: string) => {
+  const sendPlayerCommand = (func: string, args: unknown = '') => {
     iframeRef.current?.contentWindow?.postMessage(
-      JSON.stringify({ event: 'command', func, args: '' }),
+      JSON.stringify({ event: 'command', func, args }),
       '*'
     )
   }
@@ -58,9 +62,16 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
       {/* Iframe oculto para reproducir música */}
       <iframe
         ref={iframeRef}
-        src={isPlaying ? musicUrl : ''}
+        src={musicUrl}
         allow="autoplay; encrypted-media; picture-in-picture"
-        style={{ display: 'none' }}
+        allowFullScreen
+        style={{
+          position: 'absolute',
+          width: 0,
+          height: 0,
+          opacity: 0,
+          pointerEvents: 'none',
+        }}
         onLoad={handleLoad}
         title="Background Music"
       />
