@@ -79,7 +79,7 @@
   border-radius: 12px;
   padding: 2rem;
   box-shadow: var(--shadow-md);
-  transition: var(--transition);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {

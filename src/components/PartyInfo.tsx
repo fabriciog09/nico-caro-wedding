@@ -28,7 +28,7 @@ export default function PartyInfo() {
           className="section-title"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
           Fiesta
@@ -38,8 +38,8 @@ export default function PartyInfo() {
           className="section-subtitle"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
         >
           Hagamos juntos una fiesta épica 😎<br />
           Detalles para tener en cuenta:
@@ -50,7 +50,7 @@ export default function PartyInfo() {
             className="party-card"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <HiMusicalNote className="party-icon" />
@@ -68,7 +68,7 @@ export default function PartyInfo() {
             className="party-card"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <HiSparkles className="party-icon" />
@@ -86,7 +86,7 @@ export default function PartyInfo() {
             className="party-card"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <HiInformationCircle className="party-icon" />
@@ -127,7 +127,7 @@ export default function PartyInfo() {
           <div className="modal-content-text">
             <p><strong>Elegante / Formal</strong></p>
             <p style={{ marginTop: '1rem' }}>
-              Les pedimos que vengan con su mejor vestimenta formal. 
+              Elegante como la ocasión lo merece.
             </p>
             <ul style={{ marginTop: '1rem', textAlign: 'left' }}>
               <li><strong>Hombres:</strong> Traje y corbata</li>
@@ -147,10 +147,9 @@ export default function PartyInfo() {
             <ul style={{ textAlign: 'left', lineHeight: '2' }}>
               <li>🚗 Habrá estacionamiento disponible en el lugar</li>
               <li>📸 Contaremos con fotógrafo profesional</li>
-              <li>🍽️ Menú con opciones vegetarianas disponibles</li>
-              <li>🎵 La fiesta será con música en vivo y DJ</li>
-              <li>💒 La ceremonia comienza puntualmente a las 17hs</li>
-              <li>🎉 La celebración terminará alrededor de las 4am</li>
+              <li>🎵 La fiesta será con DJ</li>
+              <li>💒 La ceremonia comienza puntualmente a las 18:30hs</li>
+              <li>🎉 La celebración terminará alrededor de las 7am</li>
             </ul>
             <p style={{ marginTop: '1.5rem', fontStyle: 'italic', textAlign: 'center' }}>
               ¡Los esperamos con mucho amor!

@@ -18,7 +18,7 @@ export default function Gallery() {
           className="gallery-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
           <h2>Un pedacito de nosotros ✨</h2>
@@ -29,11 +29,11 @@ export default function Gallery() {
             <motion.div
               key={photo.id}
               className="gallery-item"
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.85 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              whileHover={{ scale: 1.03 }}
             >
               <img src={photo.url} alt={`Foto ${photo.id}`} />
             </motion.div>
