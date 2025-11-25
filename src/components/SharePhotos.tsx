@@ -46,21 +46,21 @@ export default function SharePhotos() {
           </div>
           
           <a
-            href="https://www.instagram.com/explore/tags/nicoycaro"
+            href="https://www.instagram.com/nicoycaro2026/"
             target="_blank"
             rel="noopener noreferrer"
             className="hashtag"
           >
-            #nicoycaro
+            @nicoycaro2026
           </a>
 
           <a
-            href="https://www.instagram.com/explore/tags/nicoycaro"
+            href="https://www.instagram.com/nicoycaro2026/"
             target="_blank"
             rel="noopener noreferrer"
             className="boton"
           >
-            Ver en Instagram
+            Ver perfil
           </a>
         </motion.div>
       </div>
