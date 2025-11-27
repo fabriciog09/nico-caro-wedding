@@ -38,24 +38,40 @@ export default function Gifts() {
               algo, estas son nuestras opciones:
             </p>
 
-            <div className="gift-option">
-              <h3>🏦 Colectivo Abitab </h3>
-              <div className="bank-details">
-                <p>
-                  <strong>Nombre:</strong> Boda Carolina Techera y Nicolas
-                  Camargo
-                </p>
-                <p>
-                  <strong>Numero:</strong> 145597
-                </p>
+            <div className="gift-combined-card">
+              <div className="gift-combined-section">
+                <div>
+                  <h3>🏦 Colectivo Abitab</h3>
+                  <p>Acercate a un local Abitab y solicitá el colectivo con estos datos:</p>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Nombre</dt>
+                    <dd>Boda Carolina Techera y Nicolás Camargo</dd>
+                  </div>
+                  <div>
+                    <dt>Número</dt>
+                    <dd>145597</dd>
+                  </div>
+                </dl>
               </div>
-            </div>
-            <div className="gift-option">
-              <h3>💰 Pix</h3>
-              <div className="bank-details">
-              <p> <strong>Llave Pix:</strong> sitilonico@gmail.com</p>
+
+              <div className="gift-divider">
+                <span>o</span>
               </div>
-            
+
+              <div className="gift-combined-section">
+                <div>
+                  <h3>💰 Pix</h3>
+                  <p>Si estás en Brasil o prefieres transferir desde tu app bancaria:</p>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Clave Pix</dt>
+                    <dd>sitilonico@gmail.com</dd>
+                  </div>
+                </dl>
+              </div>
             </div>
 
             <p
