@@ -7,26 +7,32 @@ interface MusicPlayerProps {
   isPlaying: boolean
 }
 
-const YOUTUBE_VIDEO_ID = 'XMPgVZtADtQ'
+const YOUTUBE_VIDEO_ID = '3wxyN3z9PL4'
+const START_SECONDS = 22
+const DEFAULT_ORIGIN = 'https://nico-caro-wedding.vercel.app'
 
 export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(initialIsPlaying)
   const [isLoaded, setIsLoaded] = useState(false)
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
-  // URL del video de YouTube (con parámetros para autoplay/loop y control vía API)
-  // Formato: https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID&controls=0
-  const originParam =
-    typeof window !== 'undefined' ? encodeURIComponent(window.location.origin) : ''
-  const musicUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&mute=1${
-    originParam ? `&origin=${originParam}` : ''
-  }`
+  const currentOrigin =
+    typeof window !== 'undefined' && window.location?.origin?.startsWith('http')
+      ? window.location.origin
+      : DEFAULT_ORIGIN
+
+  const originParam = encodeURIComponent(currentOrigin)
+  const musicUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&mute=1&start=${START_SECONDS}&origin=${originParam}`
 
   const sendPlayerCommand = (func: string, args: unknown = '') => {
     iframeRef.current?.contentWindow?.postMessage(
       JSON.stringify({ event: 'command', func, args }),
       '*'
     )
+  }
+
+  const seekToStart = () => {
+    sendPlayerCommand('seekTo', [START_SECONDS, true])
   }
 
   useEffect(() => {
@@ -38,8 +44,9 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
       if (isPlaying) {
         sendPlayerCommand('pauseVideo')
       } else {
-        sendPlayerCommand('unMute')
         sendPlayerCommand('playVideo')
+        sendPlayerCommand('unMute')
+        seekToStart()
       }
     }
     setIsPlaying(!isPlaying)
@@ -48,8 +55,9 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
   const handleLoad = () => {
     setIsLoaded(true)
     if (isPlaying) {
-      sendPlayerCommand('unMute')
       sendPlayerCommand('playVideo')
+      sendPlayerCommand('unMute')
+      seekToStart()
     }
   }
 
