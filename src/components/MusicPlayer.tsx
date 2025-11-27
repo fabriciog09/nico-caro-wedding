@@ -73,10 +73,10 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
         src={isPlaying ? musicUrl : undefined}
         allow="autoplay; encrypted-media; picture-in-picture"
         allowFullScreen
+        width={10}
+        height={10}
         style={{
           position: 'absolute',
-          width: 0,
-          height: 0,
           opacity: 0,
           pointerEvents: 'none',
         }}
