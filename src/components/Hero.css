@@ -328,6 +328,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hero-scroll {
+    bottom: .5rem;
+  }
+}
+
 @media (max-width: 640px) {
   .hero-card {
     padding: 2rem;
