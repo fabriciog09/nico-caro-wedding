@@ -58,11 +58,9 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
       sendPlayerCommand('playVideo')
       sendPlayerCommand('unMute')
       seekToStart()
+    } else {
+      sendPlayerCommand('pauseVideo')
     }
-  }
-
-  if (!initialIsPlaying && !isPlaying) {
-    return null
   }
 
   return (
@@ -70,7 +68,7 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
       {/* Iframe oculto para reproducir música */}
       <iframe
         ref={iframeRef}
-        src={isPlaying ? musicUrl : undefined}
+        src={musicUrl}
         allow="autoplay; encrypted-media; picture-in-picture"
         allowFullScreen
         width={10}
