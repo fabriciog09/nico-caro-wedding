@@ -17,11 +17,10 @@ function App() {
 
   const handleEnter = (withMusic: boolean) => {
     setPlayMusic(withMusic)
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent(withMusic ? 'music-play-intent' : 'music-pause-intent'))
+    }
     setShowWelcome(false)
-  }
-
-  if (showWelcome) {
-    return <Welcome onEnter={handleEnter} />
   }
 
   return (
@@ -35,6 +34,7 @@ function App() {
       <Gifts />
       <SharePhotos />
       <Footer />
+      {showWelcome && <Welcome onEnter={handleEnter} />}
     </div>
   )
 }

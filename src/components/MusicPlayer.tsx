@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiSpeakerWave, HiSpeakerXMark } from 'react-icons/hi2'
 import './MusicPlayer.css'
@@ -14,6 +14,7 @@ const DEFAULT_ORIGIN = 'https://nico-caro-wedding.vercel.app'
 export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(initialIsPlaying)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [pendingPlayIntent, setPendingPlayIntent] = useState(false)
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
   const currentOrigin =
@@ -31,37 +32,64 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
     )
   }
 
-  const seekToStart = () => {
+  const seekToStart = useCallback(() => {
     sendPlayerCommand('seekTo', [START_SECONDS, true])
-  }
+  }, [])
 
-  useEffect(() => {
-    setIsPlaying(initialIsPlaying)
-  }, [initialIsPlaying])
+  const playVideo = useCallback(() => {
+    sendPlayerCommand('playVideo')
+    sendPlayerCommand('unMute')
+    seekToStart()
+    setIsPlaying(true)
+    setPendingPlayIntent(false)
+  }, [seekToStart])
+
+  const pauseVideo = useCallback(() => {
+    sendPlayerCommand('pauseVideo')
+    setIsPlaying(false)
+  }, [])
 
   const toggleMusic = () => {
-    if (iframeRef.current) {
-      if (isPlaying) {
-        sendPlayerCommand('pauseVideo')
-      } else {
-        sendPlayerCommand('playVideo')
-        sendPlayerCommand('unMute')
-        seekToStart()
-      }
+    if (isPlaying) {
+      pauseVideo()
+    } else {
+      playVideo()
     }
-    setIsPlaying(!isPlaying)
   }
 
   const handleLoad = () => {
     setIsLoaded(true)
-    if (isPlaying) {
-      sendPlayerCommand('playVideo')
-      sendPlayerCommand('unMute')
-      seekToStart()
+    if (pendingPlayIntent || isPlaying) {
+      playVideo()
     } else {
-      sendPlayerCommand('pauseVideo')
+      pauseVideo()
     }
   }
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    const handlePlayIntent = () => {
+      if (isLoaded) {
+        playVideo()
+      } else {
+        setPendingPlayIntent(true)
+      }
+    }
+
+    const handlePauseIntent = () => {
+      setPendingPlayIntent(false)
+      pauseVideo()
+    }
+
+    window.addEventListener('music-play-intent', handlePlayIntent)
+    window.addEventListener('music-pause-intent', handlePauseIntent)
+
+    return () => {
+      window.removeEventListener('music-play-intent', handlePlayIntent)
+      window.removeEventListener('music-pause-intent', handlePauseIntent)
+    }
+  }, [isLoaded, pauseVideo, playVideo])
 
   return (
     <>
