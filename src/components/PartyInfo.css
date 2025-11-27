@@ -68,21 +68,6 @@
   min-width: 180px;
 }
 
-.song-input {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
-  border: 2px solid var(--color-light);
-  border-radius: 8px;
-  font-family: var(--font-body);
-  transition: var(--transition);
-}
-
-.song-input:focus {
-  outline: none;
-  border-color: var(--color-primary);
-}
-
 .modal-content-text {
   color: var(--color-dark);
   line-height: 1.8;

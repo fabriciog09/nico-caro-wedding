@@ -5,21 +5,8 @@ import Modal from './Modal'
 import './PartyInfo.css'
 
 export default function PartyInfo() {
-  const [showMusicModal, setShowMusicModal] = useState(false)
   const [showDressCodeModal, setShowDressCodeModal] = useState(false)
   const [showTipsModal, setShowTipsModal] = useState(false)
-  const [songSuggestion, setSongSuggestion] = useState('')
-
-  const handleSongSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (songSuggestion.trim()) {
-      console.log('Song suggestion:', songSuggestion)
-      // Aquí iría la lógica para enviar la sugerencia al backend
-      setSongSuggestion('')
-      setShowMusicModal(false)
-      alert('¡Gracias por tu sugerencia!')
-    }
-  }
 
   return (
     <section id="musica" className="party-info section">
@@ -56,12 +43,14 @@ export default function PartyInfo() {
             <HiMusicalNote className="party-icon" />
             <h3>Música</h3>
             <p>¿Cuál es la canción que no debe faltar en la PlayList de la fiesta?</p>
-            <button 
+            <a
               className="btn btn-primary"
-              onClick={() => setShowMusicModal(true)}
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfQe0ApdfFmcaO5-AynmdnS_CD81KRApRtgn56bD2sz8dIRCg/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Sugerir canción
-            </button>
+            </a>
           </motion.div>
 
           <motion.div
@@ -101,25 +90,6 @@ export default function PartyInfo() {
           </motion.div>
         </div>
       </div>
-
-      {showMusicModal && (
-        <Modal onClose={() => setShowMusicModal(false)}>
-          <h2 className="modal-title">Sugerir Canción</h2>
-          <form onSubmit={handleSongSubmit}>
-            <input
-              type="text"
-              className="song-input"
-              placeholder="Nombre de la canción y artista"
-              value={songSuggestion}
-              onChange={(e) => setSongSuggestion(e.target.value)}
-              autoFocus
-            />
-            <button type="submit" className="btn btn-primary" style={{ width: '100%', marginTop: '1rem' }}>
-              Enviar sugerencia
-            </button>
-          </form>
-        </Modal>
-      )}
 
       {showDressCodeModal && (
         <Modal onClose={() => setShowDressCodeModal(false)}>

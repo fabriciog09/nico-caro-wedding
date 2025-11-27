@@ -8,6 +8,7 @@ import Gifts from './components/Gifts'
 import SharePhotos from './components/SharePhotos'
 import Footer from './components/Footer'
 import MusicPlayer from './components/MusicPlayer'
+import VerseBanner from './components/VerseBanner'
 import './App.css'
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Hero />
       <EventDetails />
       <Gallery />
+      <VerseBanner />
       <PartyInfo />
       <Gifts />
       <SharePhotos />

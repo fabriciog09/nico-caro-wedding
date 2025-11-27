@@ -18,7 +18,7 @@ export default function MusicPlayer({ isPlaying: initialIsPlaying }: MusicPlayer
   // Formato: https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID&controls=0
   const originParam =
     typeof window !== 'undefined' ? encodeURIComponent(window.location.origin) : ''
-  const musicUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1${
+  const musicUrl = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&enablejsapi=1&mute=1${
     originParam ? `&origin=${originParam}` : ''
   }`
 

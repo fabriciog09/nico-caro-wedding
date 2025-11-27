@@ -185,13 +185,10 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.6 }}
             >
               <p>
-
-              <span className="quote-mark">“</span>
-                We are all mortal until the first kiss and the second glass of
-                wine.
+                <span className="quote-mark">“</span>
+                Con la bendición de Dios y el cariño de nuestras familias, tenemos la alegría de invitarte a celebrar nuestra unión.
                 <span className="quote-mark">”</span>
               </p>
-             
             </motion.div>
 
             <motion.div
