@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { HiGift } from 'react-icons/hi2'
-import Modal from './Modal'
-import './Gifts.css'
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { HiGift } from "react-icons/hi2";
+import Modal from "./Modal";
+import "./Gifts.css";
 
 export default function Gifts() {
-  const [showGiftsModal, setShowGiftsModal] = useState(false)
+  const [showGiftsModal, setShowGiftsModal] = useState(false);
 
   return (
     <section className="gifts section">
@@ -15,12 +15,12 @@ export default function Gifts() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <HiGift className="gifts-icon" />
           <h2>Regalos</h2>
           <p>Si deseas regalarnos algo más que tu hermosa presencia...</p>
-          <button 
+          <button
             className="btn btn-primary"
             onClick={() => setShowGiftsModal(true)}
           >
@@ -33,25 +33,44 @@ export default function Gifts() {
         <Modal onClose={() => setShowGiftsModal(false)}>
           <h2 className="modal-title">Regalos</h2>
           <div className="gifts-modal-content">
-            <p style={{ marginBottom: '2rem', textAlign: 'center' }}>
-              Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo, 
-              estas son nuestras opciones:
+            <p style={{ marginBottom: "2rem", textAlign: "center" }}>
+              Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos
+              algo, estas son nuestras opciones:
             </p>
 
             <div className="gift-option">
               <h3>🏦 Colectivo Abitab </h3>
               <div className="bank-details">
-                <p><strong>Nombre:</strong> Boda Carolina Techera y Nicolas Camargo</p>
-                <p><strong>Numero:</strong> 145597</p>
+                <p>
+                  <strong>Nombre:</strong> Boda Carolina Techera y Nicolas
+                  Camargo
+                </p>
+                <p>
+                  <strong>Numero:</strong> 145597
+                </p>
               </div>
             </div>
-            <p style={{ marginTop: '2rem', fontStyle: 'italic', textAlign: 'center', fontSize: '0.95rem' }}>
+            <div className="gift-option">
+              <h3>💰 Pix</h3>
+              <div className="bank-details">
+              <p> <strong>Llave Pix:</strong> sitilonico@gmail.com</p>
+              </div>
+            
+            </div>
+
+            <p
+              style={{
+                marginTop: "2rem",
+                fontStyle: "italic",
+                textAlign: "center",
+                fontSize: "0.95rem",
+              }}
+            >
               ¡Muchas gracias por tu generosidad!
             </p>
           </div>
         </Modal>
       )}
     </section>
-  )
+  );
 }
-
