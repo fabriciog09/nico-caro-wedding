@@ -42,7 +42,6 @@ export default function Gifts() {
               <div className="gift-combined-section">
                 <div>
                   <h3>🏦 Colectivo Abitab</h3>
-                  <p>Acercate a un local Abitab y solicitá el colectivo con estos datos:</p>
                 </div>
                 <dl>
                   <div>
@@ -63,7 +62,6 @@ export default function Gifts() {
               <div className="gift-combined-section">
                 <div>
                   <h3>💰 Pix</h3>
-                  <p>Si estás en Brasil o prefieres transferir desde tu app bancaria:</p>
                 </div>
                 <dl>
                   <div>

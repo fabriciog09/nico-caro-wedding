@@ -96,6 +96,7 @@
 
 .gift-combined-section dl > div {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -141,8 +142,6 @@
   }
 
   .gift-combined-section dl > div {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 0.2rem;
   }
 
