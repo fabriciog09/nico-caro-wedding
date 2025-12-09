@@ -66,7 +66,7 @@ export default function Gifts() {
                 <dl>
                   <div>
                     <dt>Clave Pix</dt>
-                    <dd>sitilonico@gmail.com</dd>
+                    <dd>stilonico@gmail.com</dd>
                   </div>
                 </dl>
               </div>
