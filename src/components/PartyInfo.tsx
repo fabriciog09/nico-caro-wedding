@@ -120,6 +120,7 @@ export default function PartyInfo() {
               <li>🎵 La fiesta será con DJ</li>
               <li>💒 La ceremonia comienza puntualmente a las 18:30hs</li>
               <li>🎉 La celebración terminará alrededor de las 7am</li>
+              <li>🕶️ No te olvides llevar tus lentes de sol</li>
             </ul>
             <p style={{ marginTop: '1.5rem', fontStyle: 'italic', textAlign: 'center' }}>
               ¡Los esperamos con mucho amor!
