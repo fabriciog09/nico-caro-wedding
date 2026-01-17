@@ -10,7 +10,9 @@ interface TimeLeft {
 }
 
 export default function Hero() {
-  const targetDate = "2026-01-17T17:00:00";
+  // Fecha objetivo en zona horaria de Montevideo (UTC-3)
+  // Formato ISO con offset: 2026-01-17 a las 18:30 hora de Montevideo
+  const targetDate = "2026-01-17T18:30:00-03:00";
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -23,7 +25,13 @@ export default function Hero() {
   // Contador regresivo
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const difference = +new Date(targetDate) - +new Date();
+      // La fecha objetivo está en formato ISO con offset -03:00 (Montevideo)
+      // JavaScript convierte esto automáticamente a UTC para el cálculo
+      const targetDateTime = new Date(targetDate);
+      // Obtener la hora actual (en UTC, que es lo que necesitamos para comparar timestamps)
+      const now = new Date();
+      // Calcular diferencia en milisegundos (ambos timestamps están en UTC)
+      const difference = targetDateTime.getTime() - now.getTime();
 
       if (difference > 0) {
         setTimeLeft({
